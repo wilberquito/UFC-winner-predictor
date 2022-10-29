@@ -1,0 +1,12 @@
+version: "3"
+services:
+  jupyter:
+    image: jupyterlab:latest
+    ports:
+      - 8888:8888
+    volumes:
+      - jupyterlab_volume:/project
+volumes:
+  my_volume:
+    external: true
+
