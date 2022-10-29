@@ -7,6 +7,6 @@ services:
     volumes:
       - jupyterlab_volume:/project
 volumes:
-  my_volume:
+  jupyterlab_volume:
     external: true
 
