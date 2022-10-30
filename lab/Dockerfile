@@ -2,7 +2,6 @@ FROM continuumio/miniconda3:4.10.3p1
 
 WORKDIR /project
 
-COPY ./README.md /project
 COPY ./data /project/data
 COPY ./notebooks /project/notebooks
 COPY ./requirements.txt requirements.txt
