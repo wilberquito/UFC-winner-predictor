@@ -4,8 +4,18 @@ services:
     image: jupyterlab:latest
     ports:
       - 8888:8888
+    depends_on:
+      - db 
     volumes:
       - jupyterlab_volume:/project
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
 volumes:
   jupyterlab_volume:
     external: true
