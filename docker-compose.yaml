@@ -6,9 +6,9 @@ services:
     ports:
       - 8888:8888
     depends_on:
-      - database
+      - postgres_db
 
-  database:
+  postgres_db:
     image: postgreslab:latest
     restart: always
     ports:
@@ -16,4 +16,15 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    depends_on:
+      - mongo_db
+
+  mongo_db:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: mongo
+        MONGO_INITDB_ROOT_PASSWORD: mongo
 

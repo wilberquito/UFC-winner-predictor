@@ -30,13 +30,23 @@ I'll try to predict winners next clash
         -p 5432:5432 \
         -e POSTGRES_PASSWORD=<password> \
         -v /postgres/data:/var/lib/postgresql/data \
-        <image> 
+        postgres:latest
 ```
 
 You can import csv using dbeaver but for export a hole database you need to use `pg_dump`
 
 ```
     pg_dump -U <user> -W -h localhost ufc > ufc.sql
+```
+
+### Mongo container
+```
+    docker run -d \ 
+            -p 27017:27017  \
+            --name <name> \
+            -e MONGO_INITDB_ROOT_USERNAME=mongo \
+            -e MONGO_INITDB_ROOT_PASSWORD=mongo \
+            mongo:latest
 ```
 
 ## Deliver
