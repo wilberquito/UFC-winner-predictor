@@ -16,7 +16,24 @@ I'll try to predict winners next clash
     pip install -r /path/to/requirements.txt
 ```
 
-## Docker 
+### Run Jupyter in your machine
+
+```
+    jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
+```
+
+### Postgres container
+
+```
+    docker run -d \
+        --name postgres-dev \
+        -p 5432:5432 \
+        -e POSTGRES_PASSWORD=postgres \
+        -v /postgres/data:/var/lib/postgresql/data \
+        postgres 
+```
+
+## Deliver
 
 https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
 
@@ -38,7 +55,7 @@ https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
     docker compose up
 ```
 
-#### If you get an error starting your external volume
+#### If you get an error starting because of the external volume (see docker-compose.yaml)
 
 ```
     docker volume create <volume-name>
