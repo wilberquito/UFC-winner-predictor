@@ -26,21 +26,29 @@ I'll try to predict winners next clash
 
 ```
     docker run -d \
-        --name postgres-dev \
+        --name <container-name> \
         -p 5432:5432 \
-        -e POSTGRES_PASSWORD=postgres \
+        -e POSTGRES_PASSWORD=<superuser-postgres> \
         -v /postgres/data:/var/lib/postgresql/data \
-        postgres 
+        <image-name> 
 ```
 
 ## Deliver
 
 https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
 
-### Build or update the image
+### Build or update the jupyterlab image
 
 ```
+    cd wkdir/ \
     docker build -t jupyterlab:latest
+```
+
+### Build or update the postgres image
+
+```
+    cd postgres/ \
+    docker build -t postgreslab:latest
 ```
 
 ### Awake temporal container
@@ -58,7 +66,7 @@ https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
 #### If you get an error starting because of the external volume (see docker-compose.yaml)
 
 ```
-    docker volume create <volume-name>
+docker volume create <volume-name>
 ```
 
 
