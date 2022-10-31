@@ -30,7 +30,7 @@ You can create a dump with all postgres schema using `pg_dump`
 ```
     docker run -d \ 
             -p 27017:27017  \
-            --name <name> \
+            --name mongodev \
             -e MONGO_INITDB_ROOT_USERNAME=mongo \
             -e MONGO_INITDB_ROOT_PASSWORD=mongo \
             mongo:latest
