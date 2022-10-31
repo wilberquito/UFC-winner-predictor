@@ -68,7 +68,9 @@ https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
 
 ### Build the project
 
-sudo sh Make.sh
+```
+    sudo sh Make.sh
+```
 
 ### Awake services using docker compose 
 
