@@ -4,33 +4,19 @@ I'll try to predict winners next clash
 
 ## Develop
 
-### Create local environment for dependencies
-
-```
-    python3 -m venv /path/to/new/virtual/environment
-```
-
-### Install dependencies using pip
-
-```
-    pip install -r /path/to/requirements.txt
-```
-
-### Run Jupyter in your machine
-
-```
-    jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
-```
-
 ### Postgres container
 
 ```
+    cd postgres/ \
+    docker build -t postgresdev:latest
+```
+
+```
     docker run -d \
-        --name <name> \
+        --name posgresdev \
         -p 5432:5432 \
-        -e POSTGRES_PASSWORD=<password> \
-        -v /postgres/data:/var/lib/postgresql/data \
-        postgres:latest
+        -e POSTGRES_PASSWORD=postgres \
+        postgresdev:latest
 ```
 
 You can import csv using dbeaver but for export a hole database you need to use `pg_dump`
@@ -40,6 +26,7 @@ You can import csv using dbeaver but for export a hole database you need to use 
 ```
 
 ### Mongo container
+
 ```
     docker run -d \ 
             -p 27017:27017  \
@@ -55,6 +42,25 @@ As I don't want to change dns name before run docker compose what I do is
 
 add dns resolution inside '/etc/hosts' file. [source](https://stackoverflow.com/questions/19652555/add-static-dns-entry)
 
+### Run Jupyter in your machine
+
+#### Create local environment for dependencies
+
+```
+    python3 -m venv /path/to/new/virtual/env
+```
+
+#### Install dependencies using pip
+
+```
+    pip install -r /path/to/requirements.txt
+```
+
+Not you can run jupyter for work
+
+```
+    jupyter-lab --ip=0.0.0.0 --no-browser --allow-root
+```
 
 ## Deliver
 
@@ -64,36 +70,15 @@ https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
 
 sudo sh Make.sh
 
-### Build or update the jupyterlab image
-
-```
-    cd wkdir/ \
-    docker build -t jupyterlab:latest
-```
-
-### Build or update the postgres image
-
-```
-    cd postgres/ \
-    docker build -t postgreslab:latest
-```
-
-### Awake temporal container
-
-```
-    docker run --rm -it -p 8888:8888 jupyterlab:latest
-```
-
 ### Awake services using docker compose 
 
 ```
     docker compose up
 ```
 
-#### If you get an error starting because of the external volume (see docker-compose.yaml)
+### Turn off services using docker compose 
 
 ```
-docker volume create <volume-name>
+    docker compose up
 ```
-
 
