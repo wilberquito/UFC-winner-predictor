@@ -8,7 +8,7 @@ I'll try to predict winners next clash
 
 ```
     cd postgres/ \
-    docker build -t postgresdev:latest
+    docker build -t postgresdev:latest .
 ```
 
 ```
@@ -19,7 +19,7 @@ I'll try to predict winners next clash
         postgresdev:latest
 ```
 
-You can import csv using dbeaver but for export a hole database you need to use `pg_dump`
+You can create a dump with all postgres schema using `pg_dump`
 
 ```
     pg_dump -U <user> -W -h localhost ufc > ufc.sql
