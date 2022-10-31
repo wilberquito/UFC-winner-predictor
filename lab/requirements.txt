@@ -6,4 +6,5 @@ pandas
 matplotlib
 jupyterlab
 pymongo
+psycopg2-binary
 
