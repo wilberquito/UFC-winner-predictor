@@ -50,7 +50,7 @@ add dns resolution inside '/etc/hosts' file. [source](https://stackoverflow.com/
     python3 -m venv /path/to/new/virtual/env
 ```
 
-#### Install dependencies using pip
+Install dependencies using pip
 
 ```
     pip install -r /path/to/requirements.txt
