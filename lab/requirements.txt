@@ -7,4 +7,5 @@ matplotlib
 jupyterlab
 pymongo
 psycopg2-binary
+seaborn
 
