@@ -64,7 +64,7 @@ Not you can run jupyter for work
 
 ## Deliver
 
-The creation of the docker compose is ispired from [this](https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a) source
+The creation of the docker compose is inspired from this source (https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a) 
 
 ### Build the project
 
