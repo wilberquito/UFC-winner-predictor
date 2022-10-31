@@ -49,6 +49,13 @@ You can import csv using dbeaver but for export a hole database you need to use 
             mongo:latest
 ```
 
+### DNS resolution
+
+As I don't want to change dns name before run docker compose what I do is
+
+add dns resolution inside '/etc/hosts' file. [source](https://stackoverflow.com/questions/19652555/add-static-dns-entry)
+
+
 ## Deliver
 
 https://towardsdatascience.com/dockerizing-jupyter-projects-39aad547484a
