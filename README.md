@@ -28,12 +28,11 @@ You can create a dump with all postgres schema using `pg_dump`
 ### Mongo container
 
 ```
-    docker run -d \ 
-            -p 27017:27017  \
-            --name mongodev \
-            -e MONGO_INITDB_ROOT_USERNAME=mongo \
-            -e MONGO_INITDB_ROOT_PASSWORD=mongo \
-            mongo:latest
+docker run -d --name mongodev \
+        -p 27017:27017 \
+        -e MONGO_INITDB_ROOT_USERNAME=mongo \
+        -e MONGO_INITDB_ROOT_PASSWORD=mongo \
+        mongo:latest
 ```
 
 ### DNS resolution
