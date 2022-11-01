@@ -43,7 +43,7 @@ add dns resolution inside '/etc/hosts' file. [source](https://stackoverflow.com/
 
 ### Run Jupyter in your machine
 
-#### Create local environment for dependencies
+Create local environment for dependencies
 
 ```
     python3 -m venv /path/to/new/virtual/env
