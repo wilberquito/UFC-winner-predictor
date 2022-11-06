@@ -8,4 +8,6 @@ jupyterlab
 pymongo
 psycopg2-binary
 seaborn
+plotly-express==0.4.1
+scikit-learn
 
