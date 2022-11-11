@@ -2,12 +2,12 @@
 
 ##  build jupyterlab image
 cd lab/
-docker build -t jupyterlab:latest .
+docker build --no-cache -t jupyterlab:latest .
 
 ## build postgreslab image
 cd ../
 cd postgres/
-docker build -t postgreslab:latest .
+docker build --no-cache -t postgreslab:latest .
 
 ## execute docker compose
 cd ../
