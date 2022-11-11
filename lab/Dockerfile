@@ -4,6 +4,7 @@ WORKDIR /project
 
 COPY ./data /project/data
 COPY ./notebooks /project/notebooks
+COPY ./modules /project/modules
 COPY ./requirements.txt requirements.txt
 
 RUN pip install -r requirements.txt
