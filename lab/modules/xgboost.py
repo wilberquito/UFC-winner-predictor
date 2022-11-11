@@ -9,21 +9,21 @@ def classifier(data,target_column):
   from mlxtend.plotting import plot_confusion_matrix
   import pandas as pd
 
-  # TRAIN TEST SPLIT 1(example without timeseries)
+  # # TRAIN TEST SPLIT 1(example without timeseries)
   data_numeric = data.select_dtypes(include=["number"])# Force only numeric columns
   X = data_numeric.drop(target_column, axis = 1)
-  y = data_numeric[target_column]
-  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .3,random_state = 5,stratify=y)
+  # y = data_numeric[target_column]
+  # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = .3,random_state = 5,stratify=y)
 
-  # TRAIN TEST SPLIT 2(example with timeseries)
-  # train = data.loc[data['date']<datetime(2020,1,1)]
-  # train_numeric = train.select_dtypes(include=["number"]) # Force only numeric columns
-  # X_train = train_numeric.drop(target_column, axis = 1)
-  # y_train = train_numeric[target_column]
-  # test = data.loc[data['date']>=datetime(2020,1,1)]
-  # test_numeric = test.select_dtypes(include=["number"]) # Force only numeric columns
-  # X_test = test_numeric.drop(target_column, axis = 1)
-  # y_test = test_numeric[target_column]
+  #TRAIN TEST SPLIT 2(example with timeseries)
+  train = data.loc[data['date']<datetime(2020,1,1)]
+  train_numeric = train.select_dtypes(include=["number"]) # Force only numeric columns
+  X_train = train_numeric.drop(target_column, axis = 1)
+  y_train = train_numeric[target_column]
+  test = data.loc[data['date']>=datetime(2020,1,1)]
+  test_numeric = test.select_dtypes(include=["number"]) # Force only numeric columns
+  X_test = test_numeric.drop(target_column, axis = 1)
+  y_test = test_numeric[target_column]
 
   # XGBOOST
   model = XGBClassifier()
